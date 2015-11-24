@@ -1,6 +1,7 @@
 package com.iteso.facade.interfaces.impl;
 
 import com.iteso.facade.interfaces.GameConsole;
+import com.iteso.facade.interfaces.Movie;
 import com.iteso.facade.interfaces.VideoGame;
 
 /**
@@ -11,18 +12,21 @@ import com.iteso.facade.interfaces.VideoGame;
  * To change this template use File | Settings | File Templates.
  */
 public class PS3 implements GameConsole {
-    @Override
     public void on() {
         System.out.println("Play Station 3 is ON");
     }
 
-    @Override
     public void off() {
         System.out.println("Play Station 3 is OFF");
     }
 
-    @Override
     public void insertGame(VideoGame videoGame) {
         System.out.println(videoGame.getName() + " has been inserted into Play Station 3");
     }
+
+    public void insertMovie(Movie movie) {
+        System.out.println(movie.getName() + " has been inserted into Play Station 3");
+    }
+
+
 }
