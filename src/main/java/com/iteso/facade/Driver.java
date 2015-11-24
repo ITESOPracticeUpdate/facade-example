@@ -15,7 +15,7 @@ public class Driver {
 
     public static void main (String[] args){
         GameConsole ps3 = new PS4();
-        GameConsole xbox = new XBOX();
+        GameConsole xbox = new XboxOne();
         GameController dualShock = new DualShock();
         Lights lights = new EcoLights();
         Router linksys = new Linksys();
@@ -23,6 +23,9 @@ public class Driver {
         TV tv = new SonyBravia();
         PCMonitor pcmonitor = new AsusMonitor();
         PCMonitorAdapter convertedMonitor;
+        Curtains curtains = new SilkCurtains();
+        CurtainsAdapter convertedCurtains;
+
 
         System.out.println("PRUEBA 1");
         VideoGameFacade videoGameFacade = new VideoGameFacade(tv, ps3,dualShock,bose,linksys,lights);
@@ -39,15 +42,22 @@ public class Driver {
 
         System.out.println("PRUEBA 3");
         videoGameFacade = new VideoGameFacade(tv, ps3,bose,lights);
-        videoGameFacade.startPlayingMovie("Piratas of el Caribean");
+        videoGameFacade.startPlayingMovie("Jarri Poter y el tamal embrujado");
         System.out.println("=========================================================================");
 
 
         System.out.println("PRUEBA 4");
         convertedMonitor = new PCMonitorAdapter(pcmonitor);
         videoGameFacade = new VideoGameFacade(convertedMonitor, ps3,bose,lights);
-        videoGameFacade.startPlayingMovie("Piratas of el Caribean");
+        videoGameFacade.startPlayingMovie("Chabelo y el Santo contra las momias lobo de guanajuato");
         System.out.println("=========================================================================");
+
+        System.out.println("PRUEBA 5");
+        convertedCurtains = new CurtainsAdapter(curtains);
+        videoGameFacade = new VideoGameFacade(convertedMonitor, ps3, bose, convertedCurtains);
+        videoGameFacade.startPlayingMovie("Rapido y Furioso 8: Reto en la otra vida");
+        System.out.println("=========================================================================");
+
 
 
 
