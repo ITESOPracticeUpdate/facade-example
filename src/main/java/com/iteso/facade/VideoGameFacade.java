@@ -12,12 +12,12 @@ import com.iteso.facade.interfaces.impl.PS3Game;
  */
 public class VideoGameFacade {
     TV tv;
-    GameConsole console;
-    GameController controller;
-    SoundSystem soundSystem;
-    Router router;
-    Lights lights;
-    VideoGame game;
+    private GameConsole console;
+    private GameController controller;
+    private SoundSystem soundSystem;
+    private Router router;
+    private Lights lights;
+    private VideoGame game;
 
     public VideoGameFacade(TV tv,
                            GameConsole console,
@@ -26,13 +26,35 @@ public class VideoGameFacade {
                            Router router,
                            Lights lights){
         this.tv = tv;
-        this.console = console;
-        this.controller = controller;
-        this.soundSystem = soundSystem;
-        this.router = router;
-        this.lights = lights;
+        this.setConsole(console);
+        this.setController(controller);
+        this.setSoundSystem(soundSystem);
+        this.setRouter(router);
+        this.setLights(lights);
     }
-
+    public VideoGameFacade(TV tv,
+                           GameConsole console,
+                           GameController controller,
+                           SoundSystem soundSystem){
+        this.tv = tv;
+        this.setConsole(console);
+        this.setController(controller);
+        this.setSoundSystem(soundSystem);
+        this.setRouter(router);
+        this.setLights(lights);
+    }
+    public VideoGameFacade(TV tv,
+                            GameConsole console,
+                            GameController controller,
+                            SoundSystem soundSystem,
+                            Lights lights){
+        this.tv = tv;
+        this.setConsole(console);
+        this.setController(controller);
+        this.setSoundSystem(soundSystem);
+        this.setRouter(router);
+        this.setLights(lights);
+    }
 
     public void playOnlineGame(String gameName){
 
@@ -42,40 +64,114 @@ public class VideoGameFacade {
         tv.on();
         tv.toHDMI();
 
-        console.on();
-        controller.on();
-        game = new PS3Game(gameName);
-        console.insertGame(game);
+        getConsole().on();
+        getController().on();
+        setGame(new PS3Game(gameName));
+        getConsole().insertGame(getGame());
 
-        soundSystem.on();
-        soundSystem.toOpticalEntry();
+        getSoundSystem().on();
+        getSoundSystem().toOpticalEntry();
 
-        router.on();
-        router.checkInternet();
+        getRouter().on();
+        getRouter().checkInternet();
 
-        lights.off();
+        getLights().off();
 
-        game.setOnlineMode();
-        game.play();
+        getGame().setOnlineMode();
+        getGame().play();
         System.out.println();
 
+    }
+
+    public void PlayMovie(String gameName){
+
+        System.out.println("Turning the system ON, this may take some time");
+        System.out.println();
+
+        tv.on();
+        tv.toHDMI();
+
+        getConsole().on();
+        getController().on();
+        setGame(new PS3Game(gameName));
+        getConsole().insertGame(getGame());
+
+        getSoundSystem().on();
+        getSoundSystem().toOpticalEntry();
+
+   //     getRouter().on();
+    //    getRouter().checkInternet();
+
+        getLights().off();
+
+        getGame().setOnlineMode();
+        getGame().play();
+        System.out.println();
 
     }
+
 
     public void stopPlayingGame(){
 
         System.out.println();
         System.out.println("Turning the system OFF, this may take some time");
         System.out.println();
-        lights.on();
+        getLights().on();
         tv.off();
-        controller.off();
-        console.off();
-        soundSystem.off();
-        router.off();
+        getController().off();
+        getConsole().off();
+        getSoundSystem().off();
+        getRouter().off();
 
 
     }
 
 
+    public GameConsole getConsole() {
+        return console;
+    }
+
+    public void setConsole(GameConsole console) {
+        this.console = console;
+    }
+
+    public GameController getController() {
+        return controller;
+    }
+
+    public void setController(GameController controller) {
+        this.controller = controller;
+    }
+
+    public SoundSystem getSoundSystem() {
+        return soundSystem;
+    }
+
+    public void setSoundSystem(SoundSystem soundSystem) {
+        this.soundSystem = soundSystem;
+    }
+
+    public Router getRouter() {
+        return router;
+    }
+
+    public void setRouter(Router router) {
+        this.router = router;
+    }
+
+    public Lights getLights() {
+        return lights;
+    }
+
+    public void setLights(Lights lights) {
+        this.lights = lights;
+    }
+
+    public VideoGame getGame() {
+        return game;
+    }
+
+    public void setGame(VideoGame game) {
+        this.game = game;
+    }
 }
