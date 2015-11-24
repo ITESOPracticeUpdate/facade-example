@@ -14,23 +14,22 @@ public class Driver {
 
 
     public static void main (String[] args){
-        GameConsole ps3 = new PS3();
-        GameConsole xbox = new XBOX();
+        GameConsole ps4 = new PS4();
+        GameConsole xboxOne = new XBOXOne();
         GameController dualShock = new DualShock();
         Lights lights = new EcoLights();
-        Router linksys = new Linksys();
         SoundSystem bose = new Bose();
         TV tv = new SonyBravia();
 
-        VideoGameFacade videoGameFacade = new VideoGameFacade(tv, ps3,dualShock,bose,linksys,lights);
+        PlayMovie playMovie = new PlayMovie(tv, ps4,dualShock,bose,lights);
 
-        videoGameFacade.playOnlineGame("Fifa 14");
+        playMovie.playMovie("Avengers");
 
-        videoGameFacade.stopPlayingGame();
+        playMovie.stopPlayingMovie();
 
-         videoGameFacade = new VideoGameFacade(tv, xbox,dualShock,bose,linksys,lights);
+         playMovie = new PlayMovie(tv, xboxOne,dualShock,bose, lights);
 
-        videoGameFacade.playOnlineGame("Gears Of Wars");
+        playMovie.playMovie("Captain America: Civil War");
 
     }
 

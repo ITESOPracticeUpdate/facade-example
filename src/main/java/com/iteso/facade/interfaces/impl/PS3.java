@@ -1,6 +1,7 @@
 package com.iteso.facade.interfaces.impl;
 
 import com.iteso.facade.interfaces.GameConsole;
+import com.iteso.facade.interfaces.Movie;
 import com.iteso.facade.interfaces.VideoGame;
 
 /**
@@ -24,5 +25,10 @@ public class PS3 implements GameConsole {
     @Override
     public void insertGame(VideoGame videoGame) {
         System.out.println(videoGame.getName() + " has been inserted into Play Station 3");
+    }
+
+    public void insertMovie(Movie movie ){
+        System.out.println(movie.getName() + " has been inserted into Play Station 3 as a Movie");
+
     }
 }
