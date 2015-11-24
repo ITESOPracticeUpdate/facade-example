@@ -1,6 +1,7 @@
 package com.iteso.facade.interfaces.impl;
 
 import com.iteso.facade.interfaces.GameConsole;
+import com.iteso.facade.interfaces.PlayMovie;
 import com.iteso.facade.interfaces.VideoGame;
 
 /**
@@ -22,5 +23,8 @@ public class XBOX implements GameConsole {
 
     public void insertGame(VideoGame videoGame) {
         System.out.println(videoGame.getName() + " has been inserted into Play Station 3");
+    }
+    public void playMovie(PlayMovie Movie) {
+        System.out.println(Movie.getName() + " has been inserted into Play Station 3");
     }
 }

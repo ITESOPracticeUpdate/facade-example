@@ -11,5 +11,5 @@ public interface GameConsole {
     void on();
     void off();
     void insertGame(VideoGame videoGame);
-    void playMovie();
+    void playMovie(PlayMovie Movie);
 }
