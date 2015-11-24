@@ -14,13 +14,14 @@ public class Driver {
 
 
     public static void main (String[] args){
-        GameConsole ps3 = new PS3();
-        GameConsole xbox = new XBOX();
+        GameConsole ps3 = new PS4();
+        GameConsole xbox = new XboxOne();
         GameController dualShock = new DualShock();
         Lights lights = new EcoLights();
         Router linksys = new Linksys();
         SoundSystem bose = new Bose();
         TV tv = new SonyBravia();
+        PurpleRayPlayer purpleRayPlayer = new SonyPurpleRayPlayer();
 
         VideoGameFacade videoGameFacade = new VideoGameFacade(tv, ps3,dualShock,bose,linksys,lights);
 
@@ -31,6 +32,10 @@ public class Driver {
          videoGameFacade = new VideoGameFacade(tv, xbox,dualShock,bose,linksys,lights);
 
         videoGameFacade.playOnlineGame("Gears Of Wars");
+
+        videoGameFacade = new VideoGameFacade(tv, purpleRayPlayer, bose, lights);
+        videoGameFacade.playMovies("Spectre");
+        videoGameFacade.stopPlayingGame();
 
     }
 

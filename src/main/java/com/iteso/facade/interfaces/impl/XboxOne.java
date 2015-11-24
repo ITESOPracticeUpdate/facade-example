@@ -10,15 +10,15 @@ import com.iteso.facade.interfaces.VideoGame;
  * Time: 10:59 PM
  * To change this template use File | Settings | File Templates.
  */
-public class XBOX implements GameConsole {
+public class XboxOne implements GameConsole {
     @Override
     public void on() {
-        System.out.println("XBOX 360 is ON");
+        System.out.println("XboxOne 360 is ON");
     }
 
     @Override
     public void off() {
-        System.out.println("XBOX 360 is OFF");
+        System.out.println("XboxOne 360 is OFF");
     }
 
     @Override

@@ -10,7 +10,7 @@ import com.iteso.facade.interfaces.VideoGame;
  * Time: 10:59 PM
  * To change this template use File | Settings | File Templates.
  */
-public class PS3 implements GameConsole {
+public class PS4 implements GameConsole {
     @Override
     public void on() {
         System.out.println("Play Station 3 is ON");
