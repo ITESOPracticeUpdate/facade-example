@@ -9,9 +9,9 @@ import com.iteso.facade.interfaces.VideoGame;
  * Time: 11:05 PM
  * To change this template use File | Settings | File Templates.
  */
-public class PS3Game implements VideoGame {
+public class PS4Game implements VideoGame {
     String name;
-    public PS3Game(String name){
+    public PS4Game(String name){
         this.name = name;
     }
 
