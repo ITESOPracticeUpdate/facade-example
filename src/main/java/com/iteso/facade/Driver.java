@@ -22,7 +22,7 @@ public class Driver {
         SoundSystem bose = new Bose();
         TV tv = new SonyBravia();
 
-        /*VideoGameFacade videoGameFacade = new VideoGameFacade(tv, ps3,dualShock,bose,linksys,lights);
+        VideoGameFacade videoGameFacade = new VideoGameFacade(tv, ps3,dualShock,bose,linksys,lights);
         videoGameFacade.playOnlineGame("Fifa 14");
         videoGameFacade.stopPlayingGame();
 
@@ -30,7 +30,7 @@ public class Driver {
         videoGameFacade.playOnlineGame("Gears Of Wars");
 
         videoGameFacade = new VideoGameFacade(tv, ps3,bose,lights);
-        videoGameFacade.startPlayingMovie("Piratas of el Caribean");*/
+        videoGameFacade.startPlayingMovie("Piratas of el Caribean");
 
 
 

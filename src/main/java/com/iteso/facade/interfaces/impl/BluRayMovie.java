@@ -14,7 +14,7 @@ public class BluRayMovie implements Movie {
 
     @Override
     public void play() {
-        System.out.println("Playing movie" + getName());
+        System.out.println("Playing movie " + getName());
     }
 
     @Override
