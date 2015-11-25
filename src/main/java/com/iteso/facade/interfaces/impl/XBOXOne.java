@@ -4,21 +4,17 @@ import com.iteso.facade.interfaces.GameConsole;
 import com.iteso.facade.interfaces.VideoGame;
 
 /**
- * Created with IntelliJ IDEA.
- * User: rvillalobos
- * Date: 11/14/13
- * Time: 10:59 PM
- * To change this template use File | Settings | File Templates.
+ * Created by ShaSkills on 24/11/2015.
  */
-public class XBOX implements GameConsole {
+public class XBOXOne implements GameConsole{
 
     public void on() {
-        System.out.println("XBOX 360 is ON");
+        System.out.println("XBOX ONE is ON");
     }
 
 
     public void off() {
-        System.out.println("XBOX 360 is OFF");
+        System.out.println("XBOX ONE is OFF");
     }
 
 
