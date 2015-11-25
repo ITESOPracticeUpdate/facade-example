@@ -1,5 +1,7 @@
 package com.iteso.facade.interfaces;
 
+import com.iteso.facade.VideoGameFacade;
+
 /**
  * Created with IntelliJ IDEA.
  * User: rvillalobos
@@ -11,4 +13,7 @@ public interface VideoGame {
     void setOnlineMode();
     void play();
     String getName();
-}
+
+
+
+}//videogame

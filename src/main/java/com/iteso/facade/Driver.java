@@ -22,6 +22,12 @@ public class Driver {
         SoundSystem bose = new Bose();
         TV tv = new SonyBravia();
 
+        //agregar ps4 y xbox one
+        GameConsole ps4 = new PS4();
+        GameConsole xboxOne = new XBOXONE();
+
+
+
         VideoGameFacade videoGameFacade = new VideoGameFacade(tv, ps3,dualShock,bose,linksys,lights);
 
         videoGameFacade.playOnlineGame("Fifa 14");
