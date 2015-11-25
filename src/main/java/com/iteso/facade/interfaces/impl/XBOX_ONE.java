@@ -11,15 +11,15 @@ import com.iteso.facade.interfaces.VideoGame;
  * Time: 10:59 PM
  * To change this template use File | Settings | File Templates.
  */
-public class PS3 implements GameConsole {
+public class XBOX_ONE implements GameConsole {
 
     public void on() {
-        System.out.println("Play Station 3 is ON");
+        System.out.println("XBOX 360 is ON");
     }
 
 
     public void off() {
-        System.out.println("Play Station 3 is OFF");
+        System.out.println("XBOX 360 is OFF");
     }
 
 
@@ -27,7 +27,8 @@ public class PS3 implements GameConsole {
         System.out.println(videoGame.getName() + " has been inserted into Play Station 3");
     }
 
+
     public void runOnlineVideoStreaming(Movie movie) {
-        System.out.println(movie.getName() + " is starting to play in Play Station 3");
+        System.out.println(movie.getName() + " is starting to play in XBOX ONE");
     }
 }
