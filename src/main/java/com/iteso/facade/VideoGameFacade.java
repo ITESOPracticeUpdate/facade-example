@@ -1,6 +1,7 @@
 package com.iteso.facade;
 
 import com.iteso.facade.interfaces.*;
+import com.iteso.facade.interfaces.impl.BluRayMovie;
 import com.iteso.facade.interfaces.impl.PS3Game;
 
 /**
@@ -18,19 +19,29 @@ public class VideoGameFacade {
     Router router;
     Lights lights;
     VideoGame game;
+    Movie movie;
+    USB usb;
+
+    public VideoGameFacade(){
+
+    }
 
     public VideoGameFacade(TV tv,
                            GameConsole console,
                            GameController controller,
                            SoundSystem soundSystem,
                            Router router,
-                           Lights lights){
+                           Lights lights,
+                           Movie movie,
+                           USB usb){
         this.tv = tv;
         this.console = console;
         this.controller = controller;
         this.soundSystem = soundSystem;
         this.router = router;
         this.lights = lights;
+        this.movie = movie;
+        this.usb = usb;
     }
 
 
@@ -55,6 +66,8 @@ public class VideoGameFacade {
 
         lights.off();
 
+        usb.insertUSB();
+
         game.setOnlineMode();
         game.play();
         System.out.println();
@@ -71,11 +84,41 @@ public class VideoGameFacade {
         tv.off();
         controller.off();
         console.off();
+        usb.ejectUSB();
         soundSystem.off();
         router.off();
 
 
     }
 
+    public void playMovies(String movieName){
+        System.out.println("Turning the system ON, please wait patiently");
 
+        tv.on();
+        tv.toHDMI();
+
+        console.on();
+        controller.on();
+        movie = new BluRayMovie(movieName);
+        console.insertMovie(movie);
+
+        soundSystem.on();
+        soundSystem.toOpticalEntry();
+
+        lights.off();
+
+        movie.setMovie();
+        movie.play();
+
+    }
+
+    public void stopPlayingmovie(){
+        System.out.println("Turning the system OFF, don't talk, just wait");
+
+        lights.on();
+        tv.off();
+        controller.off();
+        console.off();
+        soundSystem.off();
+    }
 }

@@ -1,21 +1,25 @@
 package com.iteso.facade.interfaces.impl;
 
+import com.iteso.facade.interfaces.PCMonitor;
 import com.iteso.facade.interfaces.TV;
 
 /**
  * Created by GGGK4 on 24/11/2015.
  */
 public class MonitorAdapter implements TV {
+    PCMonitor monitor;
 
     public void on() {
-        System.out.println("This Monitor is On");
+        monitor.on();
+        monitor.settings();
     }
 
     public void off() {
-        System.out.println("This Monitor is Off");
+        monitor.off();
     }
 
     public void toHDMI() {
-        System.out.println("Changing Monitor input to HDMI");
+        monitor.toHDMI();
+        monitor.toVGA();
     }
 }

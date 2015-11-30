@@ -22,15 +22,16 @@ public class Driver {
         SoundSystem bose = new Bose();
         TV tv = new SonyBravia();
 
-        VideoGameFacade videoGameFacade = new VideoGameFacade(tv, ps3,dualShock,bose,linksys,lights);
+
+        /*VideoGameFacade videoGameFacade = new VideoGameFacade(tv, ps3,dualShock,bose,linksys,lights);
 
         videoGameFacade.playOnlineGame("Fifa 14");
 
         videoGameFacade.stopPlayingGame();
 
-         videoGameFacade = new VideoGameFacade(tv, xbox,dualShock,bose,linksys,lights);
+        videoGameFacade = new VideoGameFacade(tv, xbox,dualShock,bose,linksys,lights);
 
-        videoGameFacade.playOnlineGame("Gears Of Wars");
+        videoGameFacade.playOnlineGame("Gears Of Wars");*/
 
     }
 
